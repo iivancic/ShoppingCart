@@ -1,13 +1,16 @@
 import * as React from "react";
 import ShoppingItem from "./shoppingItems";
 import Header from "./header";
-import Sidebar from "./sidebar";
 import styled, { css } from "styled-components";
 
 export interface LayoutProps {}
 
 const Div100h = styled.div`
   height: 100%;
+  width: 100%;
+  overflow: auto;
+  display: inline-table;
+  position: relative;
 `;
 
 export default class Layout extends React.Component<LayoutProps, {}> {
@@ -15,7 +18,6 @@ export default class Layout extends React.Component<LayoutProps, {}> {
     return (
       <Div100h>
         <Header />
-        <Sidebar />
         <ShoppingItem />
       </Div100h>
     );

@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-const Sidebar = styled.div`
+const Bar = styled.div`
   width: 10%;
   height: 100%;
   border-bottom: 1px solid palevioletred;
@@ -10,9 +10,18 @@ const Sidebar = styled.div`
   color: white;
   padding: 0;
   margin: 0;
-  float: right;
+  right: 0;
+  position: absolute;
+  font-size: 30px;
 `;
 
-export default () => {
-  return <Sidebar>This is a nice Sidebar ^.^</Sidebar>;
+type card = {
+  sum: number
+}
+
+export default ({sum}: card) => ( 
+    <div>
+      <Bar> So far, you have chosen items in the value of: {sum}</Bar>
+    </div>
+  );
 };
